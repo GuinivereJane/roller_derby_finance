@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-04-16 17:42:24
+  deposit_identifier: MyString
+  deposit_receipt_photo: MyString
+
+two:
+  date: 2016-04-16 17:42:24
+  deposit_identifier: MyString
+  deposit_receipt_photo: MyString
