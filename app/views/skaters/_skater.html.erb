@@ -1,0 +1,22 @@
+<%if @skater.name %>
+  <%=link_to 'Delete this Skater',@skater, method: :delete, data: {confirm: "are you sure you want to delete #{@skater}"}%>
+<%end%>
+
+<%= form_for @skater do |f| %>
+  <div>
+    <div>
+      <%=f.label :name%>
+      <%=f.text_field :name%>
+    </div>
+    <div>
+      <%=f.label :derby_name%>
+      <%=f.text_field :derby_name%>
+    </div>
+    <div>
+      <%=f.label :derby_numbercd %>
+      <%=f.text_field :derby_number%>
+    </div>
+    <div>
+      <%=f.submit%>
+  </div>
+<%end%>

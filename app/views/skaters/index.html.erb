@@ -2,8 +2,10 @@
 
 <%@skaters.each do |skater| %>
   <div>
-      Name : <%=skater.name%> |
-      Derby Name : <%=skater.derby_name%> |
-      Number : <%=skater.derby_number%>
+    <%= link_to "
+      Name : #{skater.name} |
+      Derby Name : #{skater.derby_name} |
+      Number : #{skater.derby_number}", edit_skater_path(skater)%>
   </div>
 <%end%>
+<%= link_to 'Create a new skater', new_skater_path %>
