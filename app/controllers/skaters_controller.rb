@@ -26,6 +26,7 @@ class SkatersController < ApplicationController
   end
 
   def destroy
+
     @skater.destroy
     redirect_to skaters_url
   end

@@ -1,11 +1,14 @@
 <h1>Skaters</h1>
+<ul>
+  <%@skaters.each do |skater| %>
+    <li>
 
-<%@skaters.each do |skater| %>
-  <div>
-    <%= link_to "
-      Name : #{skater.name} |
-      Derby Name : #{skater.derby_name} |
-      Number : #{skater.derby_number}", edit_skater_path(skater)%>
-  </div>
-<%end%>
+      Name : <%="#{skater.name}"%> |
+      Derby Name : <%="#{skater.derby_name}"%> |
+      Number : <%="#{skater.derby_number}"%>
+      <%= link_to "Skater Detials", edit_skater_path(skater)%>
+      <%= link_to "Record a Payment", new_skater_payment_path(skater)%>
+    </li>
+  <%end%>
+</ul>
 <%= link_to 'Create a new skater', new_skater_path %>

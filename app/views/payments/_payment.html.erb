@@ -1,1 +1,6 @@
-<h1>Enter a new payment</h1>
+<li>
+  <%= payment.amount %> |
+  <%= Paymenttype.find(payment.payment_type_id).method %> |
+  <%= payment.date %> |
+  <%= link_to "Delete Payment",skater_payment_path(@skater,payment) , method: :delete, data: {confirm: "Are you sure you want to delete this payment"} %>
+</li>

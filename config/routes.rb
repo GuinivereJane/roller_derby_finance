@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'skaters#index'
 
+  resources :deposits, except: [:index]
   resources :skaters do
-    resources :payments, only: [:new, :create]
+    resources :payments, only: [:new, :create, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

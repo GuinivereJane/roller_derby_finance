@@ -1,0 +1,19 @@
+  <h1>Enter a new payment</h1>
+
+<%= form_for [@skater, @payment] do |f|%>
+  <%= @skater.name %> |
+
+  <%= f.label(:payment_type) %>:
+  <%= f.radio_button(:payment_type_id, "3")%>
+  <%= f.label(:payment_type_id, "Cash")%>
+  <%= f.radio_button(:payment_type_id, "1")%>
+  <%= f.label(:payment_type_id, "Cheque")%>
+  <%= f.radio_button(:payment_type_id, "2")%>
+  <%= f.label(:payment_type_id, "E Transfer")%>
+
+  <%= f.label(:amount) %>
+  <%= f.text_field(:amount) %>
+
+  <%= f.submit %>
+
+  <%end%>
