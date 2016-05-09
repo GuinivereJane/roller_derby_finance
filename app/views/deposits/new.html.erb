@@ -1,0 +1,22 @@
+
+<ul>
+  <%= form_for @deposit do |f| %>
+    <div>
+      <%=f.label :deposit_identifier%>
+      <%=f.text_field :deposit_identifier%>
+    </div>
+    <% @payments.each do |payment| %>
+      <% if payment.deposit_id == nil %>
+        <li>
+          <%=check_box_tag "payment_ids[]", payment.id%>
+          <%= payment.amount %> |
+          <%= Paymenttype.find(payment.payment_type_id).method %> |
+          <%= payment.date %>
+        </li>
+      <% end %>
+    <% end %>
+    <%=f.submit%>
+
+  <% end %>
+
+</ul>

@@ -1,26 +1,20 @@
-<%if @skater.name %>
-  <%=link_to 'Delete this Skater',@skater, method: :destroy, data: {confirm: "are you sure you want to delete #{@skater.name}"}%>
-<%end%>
-
-<%= form_for @skater do |f| %>
-  <div>
-    <div>
-      <%=f.label :name%>
-      <%=f.text_field :name%>
+<script id="skater-template" type="text/x-handlebars-template">
+  <div class="skater">
+    <form class="edit-skater-form">
+      <div>
+        <label for="name">name: </label>
+        <input type="text" name="name" value="{{name}}">
+      </div>
+      <div>
+        <label for="name">derby name: </label>
+        <input type="text" name="derby_name" value="{{derby_name}}">
+      </div>
+      <div>
+        <label for="name">number: </label>
+        <input type="text" name="derby_number" value="{{derby_number}}">
+      </div>
+      <div>
+        <input class ="edit-skater-submit" type="submit" method="POST" data="{{id}}">
+      </div>
     </div>
-    <div>
-      <%=f.label :derby_name%>
-      <%=f.text_field :derby_name%>
-    </div>
-    <div>
-      <%=f.label :derby_numbercd %>
-      <%=f.text_field :derby_number%>
-    </div>
-    <div>
-      <%=f.submit%>
-    </div>
-  </div>
-<%end%>
-<ul>
-  <%= render @skater.payments%>
-</ul>
+  </script>
